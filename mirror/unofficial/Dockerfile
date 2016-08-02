@@ -7,7 +7,7 @@ RUN    rpm --import http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-
     && yum -y install bind-utils clamav clamav-data-empty clamav-scanner gpg rsync unzip which wget \
     && yum clean all
 
-ENV CUS_VERSION=5.3.2
+ENV CUS_VERSION=5.4.1
 
 RUN    set -x \
     && curl -L https://github.com/extremeshok/clamav-unofficial-sigs/archive/$CUS_VERSION.tar.gz | tar -xz \
