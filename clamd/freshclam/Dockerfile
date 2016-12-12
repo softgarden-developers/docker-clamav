@@ -23,11 +23,5 @@ RUN    set -x \
 
 VOLUME ["/var/lib/clamav"]
 
-# ENTRYPOINT ["freshclam"]
-
-ENV CLAMDHOST clamd
-
-ADD entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
-
+ENTRYPOINT ["freshclam"]
 CMD ["-d"]
