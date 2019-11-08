@@ -1,10 +1,10 @@
-FROM centos:7
+FROM centos:8
 MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
-RUN    rpm --import http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
+RUN    rpm --import http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8 \
     && yum -y install epel-release \
     && yum -y update \
-    && yum -y install clamav-data-empty clamav-update \
+    && yum -y install clamav-update \
     && yum clean all
 
 RUN    set -x \
