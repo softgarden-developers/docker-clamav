@@ -5,7 +5,7 @@ set -e
 
 while true; 
 do
-    clamdownloader.pl
+    cvd update
     sleep 1800
 done
 
