@@ -4,17 +4,10 @@ MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 RUN    rpm --import http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8 \
     && yum -y install epel-release \
     && yum -y update \
-    && yum -y install clamav-update clamd \
+    && yum -y install clamav-update clamd clamav-data \
     && yum clean all
 
 RUN    set -x \
-    && cd /var/lib/clamav \
-    && curl -O http://database.clamav.net/main.cvd \
-    && curl -O http://database.clamav.net/daily.cvd \
-    && curl -O http://database.clamav.net/bytecode.cvd \
-    && curl -O http://database.clamav.net/safebrowsing.cvd \
-    && chown clamupdate:clamupdate main.cvd daily.cvd bytecode.cvd safebrowsing.cvd \
-    \
     && sed -ri ' \
             s/Example/#Example/g; \
             s/#Foreground/Foreground/g; \
