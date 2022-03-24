@@ -1,4 +1,4 @@
-FROM centos:8
+FROM oraclelinux:8
 MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
 RUN    yum -y update \
